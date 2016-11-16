@@ -1,0 +1,23 @@
+{
+  "name": "ssh",
+  "version": "0.0.1",
+  "description": "Creator SSH Clent",
+  "author": "VisualSJ",
+  "main": "main.js",
+  "main-menu": {
+    "工具/SSH": {
+      "message": "ssh:open"
+    }
+  },
+  "panel": {
+    "main": "panel/panel.js",
+    "type": "dockable",
+    "title": "SSH Client",
+    "width": 500,
+    "height": 300,
+    "messages": []
+  },
+  "dependencies": {
+    "ssh2": "^0.5.2"
+  }
+}
