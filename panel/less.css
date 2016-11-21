@@ -1,0 +1,132 @@
+@import url('app://bower_components/fontawesome/css/font-awesome.min.css');
+:host {
+  display: flex;
+}
+.warp {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+.slider {
+  width: 32px;
+  transition: width 0.6s;
+  overflow: hidden;
+}
+.warp[menu] .slider {
+  width: 120px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-left: 1px solid #979797;
+  background: #333;
+}
+.ssh-menu {
+  padding: 12px 8px;
+  font-size: 16px;
+}
+.ssh-menu > div {
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+.ssh-menu > div > i {
+  width: 20px;
+}
+.ssh-menu > div > span {
+  opacity: 0;
+  transition: opacity 0.4s;
+  position: relative;
+  top: -1px;
+}
+.warp[menu] .ssh-menu > div > span {
+  opacity: 1;
+}
+.ssh-tabs > .tabs {
+  display: flex;
+  border-bottom: #777777 1px solid;
+  margin: 0 10px;
+}
+.ssh-tabs > .tabs > div {
+  flex: 1;
+  max-width: 50px;
+  text-align: center;
+  position: relative;
+  margin: 6px 0;
+  padding: 0 6px;
+  border-right: 1px solid #979797;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+.ssh-tabs > .tabs > div > i {
+  font-size: 8px;
+  position: absolute;
+  right: 6px;
+  top: 2px;
+}
+.ssh-tabs > .tabs > div[active] {
+  color: #bdbdbd;
+}
+.ssh-tabs > .tabs > div:last-child {
+  border: none;
+}
+@keyframes cursor {
+  0% {
+    background: #FFF;
+  }
+  30% {
+    background: transparent;
+  }
+  70% {
+    background: #FFF;
+  }
+}
+.ssh-terminal {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+}
+.ssh-terminal .terminal {
+  flex: 1;
+  outline: none;
+  overflow-y: scroll;
+}
+.ssh-terminal .cursor {
+  animation-name: cursor;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+.ssh-terminal .user {
+  width: 180px;
+  padding-left: 10px;
+  border-left: 1px solid #979797;
+  overflow: hidden;
+  transition: width 0.6s;
+}
+.ssh-terminal .user[fold] {
+  width: 18px;
+}
+.ssh-terminal .user i {
+  width: 16px;
+  min-width: 16px;
+  max-width: 16px;
+  cursor: pointer;
+}
+.ssh-terminal .user > div {
+  white-space: nowrap;
+  margin: 5px 0;
+}
+.ssh-terminal .user > div.button {
+  text-align: right;
+}
+.ssh-terminal .user > div.button > i {
+  visibility: hidden;
+}

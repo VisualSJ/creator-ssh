@@ -6,7 +6,7 @@ const SSH = Editor.require('packages://ssh/panel/lib/ssh');
 
 var PATH = {
     html: Editor.url('packages://ssh/panel/panel.html'),
-    style: Editor.url('packages://ssh/panel/panel.css')
+    style: Editor.url('packages://ssh/panel/less.css')
 };
 
 var id = 1;

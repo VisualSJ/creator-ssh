@@ -1,0 +1,37 @@
+.ssh-tabs {
+
+  & > .tabs {
+    display: flex;
+    border-bottom: #777777 1px solid;
+    margin: 0 10px;
+
+    & > div {
+      flex: 1;
+      max-width: 50px;
+      text-align: center;
+      position: relative;
+      margin: 6px 0;
+      padding: 0 6px;
+      border-right: 1px solid #979797;
+      cursor: pointer;
+      color: #666;
+      transition: color 0.2s;
+
+      & > i {
+        font-size: 8px;
+        position: absolute;
+        right: 6px;
+        top: 2px;
+      }
+    }
+
+    & > div[active] {
+      color: #bdbdbd;
+    }
+
+    & > div:last-child {
+      border: none;
+    }
+  }
+
+}

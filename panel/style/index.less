@@ -1,0 +1,33 @@
+@import url('app://bower_components/fontawesome/css/font-awesome.min.css');
+
+:host {
+  display: flex;
+}
+
+.warp {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.slider {
+  width: 32px;
+  transition: width 0.6s;
+  overflow: hidden;
+}
+
+.warp[menu] .slider {
+  width: 120px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-left: 1px solid #979797;
+  background: #333;
+}
+
+@import "slider";
+@import "tab";
+@import "terminal";

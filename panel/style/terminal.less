@@ -1,0 +1,63 @@
+@keyframes cursor
+{
+  0% {background: #FFF;}
+  30% {background: transparent;}
+  70% {background: #FFF;}
+}
+
+.ssh-terminal {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+
+  .terminal {
+    flex: 1;
+    outline: none;
+    overflow-y: scroll;
+  }
+
+  .cursor {
+    animation-name: cursor;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+  }
+
+  .user {
+    width: 180px;
+    padding-left: 10px;
+    border-left: 1px solid #979797;
+    overflow: hidden;
+    transition: width 0.6s;
+
+    &[fold] {
+      width: 18px;
+    }
+
+    i {
+      width: 16px;
+      min-width: 16px;
+      max-width: 16px;
+      cursor: pointer;
+    }
+
+    & > div {
+      white-space: nowrap;
+      margin: 5px 0;
+
+      &.button {
+        text-align: right;
+
+        & > i {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+
+
+}

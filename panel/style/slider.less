@@ -1,0 +1,27 @@
+.ssh-menu {
+  padding: 12px 8px;
+  font-size: 16px;
+
+  & > div {
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 20px;
+    white-space: nowrap;
+
+    & > i {
+      width: 20px;
+    }
+
+    & > span {
+      opacity: 0;
+      transition: opacity 0.4s;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
+
+.warp[menu] .ssh-menu > div > span {
+  opacity: 1;
+}
