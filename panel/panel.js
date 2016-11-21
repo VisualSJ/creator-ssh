@@ -102,7 +102,7 @@ Editor.Panel.extend({
     },
 
     ready () {
-        window.vm = this.vm = createVM(this.$warp);
+        this.vm = createVM(this.$warp);
         this.vm.create();
     },
 
