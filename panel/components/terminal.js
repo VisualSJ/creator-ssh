@@ -16,19 +16,19 @@ exports.template = `
     <div class="user" :fold="toolsFold">
         <div>
             <i class="fa fa-magnet" @click="_onToggleTools"></i>
-            <ui-input v-value="hostname" v-disabled="toolsLock" placeholder="Host..."></ui-input>
+            <ui-input v-value="hostname" v-disabled="toolsLock" placeholder="Host..." v-on:focus="onFocus"></ui-input>
         </div>
         <div>
             <i class="fa fa-user" @click="_onToggleTools"></i>
-            <ui-input v-value="username" v-disabled="toolsLock" placeholder="Username..."></ui-input>
+            <ui-input v-value="username" v-disabled="toolsLock" placeholder="Username..." v-on:focus="onFocus"></ui-input>
         </div>
         <div>
             <i class="fa fa-lock" @click="_onToggleTools" style="position:relative;left:1px;"></i>
-            <ui-input v-value="password" v-disabled="toolsLock" placeholder="Password..." password></ui-input>
+            <ui-input v-value="password" v-disabled="toolsLock" placeholder="Password..." password v-on:focus="onFocus"></ui-input>
         </div>
         <div class="button">
             <i class="fa fa-bars">&nbsp</i>
-            <ui-button v-disabled="toolsLock" @click="_onConnect">连接</ui-button>
+            <ui-button v-disabled="toolsLock" @click="_onConnect" v-on:focus="onFocus">连接</ui-button>
         </div>
     </div>
 </section>
@@ -68,7 +68,7 @@ exports.watch = {
 
     messages: {
         handler () {
-            // this.$els.terminal.scrollTop = this.$els.terminal.scrollHeight;
+            this.$els.terminal.scrollTop = this.$els.terminal.scrollHeight;
         }
     }
 };
@@ -159,6 +159,10 @@ exports.methods = {
 
         }
 
-        console.log(event.keyCode);
+        // console.log(event.keyCode);
+    },
+
+    onFocus (event) {
+        this.toolsFold = false;
     }
 };
